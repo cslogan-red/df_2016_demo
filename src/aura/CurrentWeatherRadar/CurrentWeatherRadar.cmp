@@ -1,0 +1,45 @@
+<aura:component controller="CurrentWeatherController">
+    <aura:attribute name="inputZip" type="String" />
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="zoomLevel" type="Integer" default="1" />
+    <aura:attribute name="weatherLocZip" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.initComponent}" />
+    <aura:handler event="c:WeatherZipSubmitted" action="{!c.getRadarData}" />
+    <aura:registerEvent name="RadarLoadingFinished" type="c:RadarLoadingFinished" />
+    <aura:handler name="RadarLoadingFinished" event="c:RadarLoadingFinished" action="{!c.loadingDone}" />
+    <ltng:require styles="/resource/SLDS104/assets/styles/salesforce-lightning-design-system.css"/>
+	
+  	<div aura:id="mainRadar" class="mainRadar__div--default">
+        
+        <!-- loading spinner -->
+        <div aura:id="loadingSpinnerRadar" class="slds-spinner_container">
+            <div class="slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+        
+        <!-- main radar data body -->
+        <div aura:id="mainDataRadar" class="slds-p-top--large">
+            <div class="slds-grid slds-grid--align-center slds-p-bottom--small">
+                <div class="slds-col">
+                    <div class="slds-button-group" role="group">
+                        <button class="slds-button slds-button--neutral mainRadar__button--box-shadow" 
+                                onclick="{!c.radarZoomOut}">{!$Label.c.myWeather_Radar_ZoomOutButton}</button>
+                        <button class="slds-button slds-button--neutral mainRadar__button--box-shadow" 
+                                onclick="{!c.initComponent}">{!$Label.c.myWeather_Radar_RecenterButton}</button>
+                        <button class="slds-button slds-button--neutral mainRadar__button--box-shadow" 
+                                onclick="{!c.radarZoomIn}">{!$Label.c.myWeather_Radar_ZoomInButton}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid slds-grid--align-center">
+                <div class="slds-col slds-m-bottom--medium mainRadarBody__div--default">
+                    <img aura:id="mainDataRadarImage" src="{!v.record.currentWeatherRadarImageURL}" 
+                         width="350" height="175" alt="No radar data...">
+                    </img>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

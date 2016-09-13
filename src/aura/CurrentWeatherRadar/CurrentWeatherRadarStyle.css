@@ -1,0 +1,35 @@
+/* used to hide/show elements */
+.THIS .toggle_radar {
+    
+    display: none;
+}
+
+/* default radar body theme */
+.THIS.mainRadar__div--default {
+    
+    min-width: 310px;
+    min-height: 300px;
+    margin: auto;
+}
+
+.THIS .mainRadarBody__div--default {
+
+	border-radius: t(defaultRadarBodyBorderRadius);
+	padding: 5px;
+	box-shadow: t(defaultAtmosphere);
+}
+
+.THIS .mainRadarBody__div--default img {
+
+	border-radius: t(defaultRadarBodyBorderRadius);
+}
+
+.THIS .mainRadar__button--box-shadow {
+    
+    box-shadow: t(defaultButtonAtmosphere);
+}
+
+.THIS .mainRadar__input--box-shadow {
+    
+    box-shadow: t(defaultInputAtmosphere);
+}

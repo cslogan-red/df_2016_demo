@@ -1,0 +1,130 @@
+<aura:component >
+    <ltng:require styles="/resource/SLDS104/assets/styles/salesforce-lightning-design-system.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    
+    <!-- page background -->
+    <div aura:id="mainBase" class="mainBase__div--default">
+		<div aura:id="main" class="main__div--default">
+        	
+            <div class="slds-text-heading--large slds-p-bottom--medium">Happy Hour Tracker!</div>
+           
+			<div class="slds-grid">
+                <div class="slds-col slds-p-around--small slds-has-divider--top-space">
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p class="slds-text-body--medium">
+                                <a href="#">Happy Hour #1</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">Thirsty Bear</div>
+                            </p>
+                        </div>
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">October 7th, 5PM-7PM</div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col slds-p-around--small slds-has-divider--top-space">
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p class="slds-text-body--medium">
+                                <a href="#">Happy Hour #2</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">Rickhouse</div>
+                            </p>
+                        </div>
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">October 9th, 5PM-8PM</div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col slds-p-around--small slds-has-divider--top-space">
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p class="slds-text-body--medium">
+                                <a href="#">Happy Hour #3</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">Red Dog Saloon</div>
+                            </p>
+                        </div>
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">October 12th, 6PM-7PM</div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col slds-p-around--small slds-has-divider--top-space">
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p class="slds-text-body--medium">
+                                <a href="#">Happy Hour #4</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">Thirsty Bear</div>
+                            </p>
+                        </div>
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">October 21st, 5PM-7PM</div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col slds-p-around--small slds-has-divider--top-space">
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p class="slds-text-body--medium">
+                                <a href="#">Happy Hour #5</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-grid--align-spread">
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">Local Edition</div>
+                            </p>
+                        </div>
+                        <div class="slds-col">
+                            <p>
+                                <div class="slds-text-body--medium">November 4th, 5PM-7PM</div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component controller="CurrentWeatherController">
+    <aura:attribute name="record" type="Object" />
+    
+    <!-- current conditions -->
+    <div class="slds-grid slds-p-top--medium">
+        <div aura:id="currentDetails" class="slds-col">
+            <div class="slds-has-flexi-truncate">
+                <img aura:id="mainDataBodyImg" src="{!v.record.currentWeatherImageURL}" width="50" height="50"></img>
+                <p><ui:outputText class="slds-text-heading--medium" value="{!v.record.currentLocation}" /></p>
+                <p><ui:outputText class="slds-text-heading--small" value="{!v.record.currentTemp}" /></p>
+                <p><ui:outputText class="slds-text-heading--small" value="{!v.record.currentWeather}" /></p>
+                <p><ui:outputText class="slds-text-heading--small" value="{!'Wind ' + v.record.currentWind}"/></p>
+            </div>
+        </div>
+    </div>
+</aura:component>

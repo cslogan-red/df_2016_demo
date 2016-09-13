@@ -1,0 +1,174 @@
+<aura:component controller="CurrentWeatherController">
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="weatherLoc" type="String" />
+    <aura:attribute name="weatherList" type="Object[]" />
+    <aura:attribute name="weatherListAll" type="Object[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.initPage}" />
+    <aura:registerEvent name="WeatherZipSubmitted" type="c:WeatherZipSubmitted" />
+    <ltng:require styles="/resource/SLDS104/assets/styles/salesforce-lightning-design-system.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    
+    <!-- page background -->
+    <div aura:id="mainBase" class="mainBase__div--default">
+		<div aura:id="main" class="main__div--default">
+        
+            <!-- loading spinner -->
+            <div aura:id="loadingSpinner" class="slds-spinner_container">
+                <div class="slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+            
+            <!-- main data body -->
+            <div aura:id="mainBody">
+                
+                <!-- main menu -->
+                <div aura:id="main_menu" class="slds-grid slds-grid--align-spread slds-p-bottom--x-small">
+                    <div class="slds-col">
+                        <c:WeatherLogo height="120" width="120" />
+                    </div>
+                    <div class="slds-col">
+                        <div class="slds-dropdown-trigger">
+                            <button class="slds-button slds-button--icon-border-filled main__button--box-shadow" aria-haspopup="true">
+                                <c:svg ariaHidden="true" class="slds-button__icon slds-button__icon--hint" 
+                                       xlinkHref="/resource/SLDS104/assets/icons/utility-sprite/svg/symbols.svg#rows" />
+                                <span class="slds-assistive-text">{!$Label.c.myWeather_Menu}</span>
+                            </button>
+                            <div class="slds-dropdown slds-dropdown--right slds-nubbin--top-right slds-dropdown--menu" 
+                                 style="min-width: 22rem;">
+                                <div class="slds-dropdown__header">
+                                	<span class="slds-text-heading--label">{!$Label.c.myWeather_Search}</span>
+                                </div>
+                                <ul class="dropdown__list" role="menu">
+                                    <li class="slds-dropdown__item">
+                                        <div class="slds-form-element" role="menuitem">
+                                            <div class="slds-grid slds-p-around--medium">
+                                                <div class="slds-col">
+                                                    <div class="slds-form-element__control">
+                                                        <ui:inputText aura:id="locationZipMenu" class="slds-input main__input--box-shadow" 
+                                                                      value="{!v.weatherLoc}" placeholder="Enter Zip Code"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-align-bottom slds-col--padded">
+                                                    <button id="menuSubmitButton" label="{!$Label.c.myWeather_SearchButton}" 
+                                                            class="slds-button slds-button--neutral main__button--box-shadow" 
+                                                            onclick="{!c.getWeather}">
+                                                        {!$Label.c.myWeather_SearchButton}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown__list" role="menu">
+                                    <div class="slds-dropdown__header">
+                                        <span class="slds-text-heading--label">{!$Label.c.myWeather_ExtendedForecast}</span>
+                                    </div>
+                                    <li class="slds-dropdown__item">
+                                        <div class="slds-grid slds-grid--align-spread slds-p-around--medium" role="menuitem">
+                                            <div class="slds-col slds-align-bottom">
+                                                <button id="menuTenDayButton" label="10 Day Outlook" 
+                                                        class="slds-button slds-button--neutral main__button--box-shadow" 
+                                                        onclick="{!c.getTenDayForecast}">
+                                                    {!$Label.c.myWeather_TenDayTitle}
+                                                </button>
+                                            </div>
+                                            <div class="slds-col slds-align-bottom">
+                                                <c:WeatherLogo height="120" width="120" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- current conditions component -->
+                <c:WeatherCurrentConditions aura:id="current_cond" record="{!v.record}" />
+                
+                <!-- three day outlook component -->
+                <c:WeatherThreeDayOutlook aura:id="three_day" weatherList="{!v.weatherList}" />
+                
+                <!-- current radar component component -->
+                <c:CurrentWeatherRadar aura:id="main_radar" inputZip="{!v.weatherLoc}" />
+            </div>
+            
+            <!-- ten day outlook menu & view -->
+            <div aura:id="mainTenDayBody">
+                
+                <!-- ten day menu -->
+                <div class="slds-grid slds-grid--align-spread slds-p-bottom--x-small">
+                    
+                    <div class="slds-col">
+                        <c:WeatherLogo height="120" width="120" />
+                    </div>
+                    
+                    <div class="slds-col">
+                        <div class="slds-dropdown-trigger">
+                            <button class="slds-button slds-button--icon-border-filled main__button--box-shadow" aria-haspopup="true">
+                                <c:svg ariaHidden="true" class="slds-button__icon slds-button__icon--hint" 
+                                       xlinkHref="/resource/SLDS104/assets/icons/utility-sprite/svg/symbols.svg#rows" />
+                                <span class="slds-assistive-text">{!$Label.c.myWeather_Menu}</span>
+                            </button>
+                            
+                            <div class="slds-dropdown slds-dropdown--right slds-nubbin--top-right slds-dropdown--menu" 
+                                 style="min-width: 22rem;">
+                                <div class="slds-dropdown__header">
+                                    <span class="slds-text-heading--label">{!$Label.c.myWeather_GoBackButton}</span>
+                                </div>
+                                <ul class="slds-dropdown__list" role="menu">
+                                    <li class="slds-dropdown__item">
+                                        <div class="slds-grid slds-grid--align-spread slds-p-around--medium" role="menuitem">
+                                            <div class="slds-col slds-align-bottom">
+                                                <button id="menuHomeButton" label="Home" 
+                                                        class="slds-button slds-button--neutral main__button--box-shadow" 
+                                                        onclick="{!c.initPage}">
+                                                    {!$Label.c.myWeather_HomeButton}
+                                                </button>
+                                            </div>
+                                            <div class="slds-col slds-align-bottom">
+                                                <c:WeatherLogo height="120" width="120" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- ten day outlook component -->
+                <c:WeatherTenDayOutlook weatherList="{!v.weatherList}" weatherListAll="{!v.weatherListAll}" />
+
+            </div>
+            
+            <!-- main search body displayed on firstime load if no cookie is present -->
+            <div aura:id="mainInputBody">
+                
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="locationZip">{!$Label.c.myWeather_NewSearch}</label>
+                    <div class="slds-form-element__control">
+                        <ui:inputText aura:id="locationZip" class="slds-input main__input--box-shadow" value="{!v.weatherLoc}" 
+                                      placeholder="Enter Zip Code"/>
+                    </div>
+                </div>
+                
+                <div class="slds-p-top--large slds-p-bottom--large slds-grid">
+                    <div class="slds-col">
+                        <button id="formSubmitButton" label="Search" class="slds-button slds-button--neutral main__button--box-shadow" 
+                                onclick="{!c.getWeather}">
+                            {!$Label.c.myWeather_SearchButton}
+                        </button>
+                    </div>
+                    <div class="slds-col slds-p-left--large">
+                        <c:WeatherLogo height="120" width="120" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>    
+</aura:component>

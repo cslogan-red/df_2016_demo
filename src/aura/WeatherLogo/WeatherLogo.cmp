@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="height" type="String" default="120" />
+    <aura:attribute name="width" type="String" default="120" />
+    
+    <img src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_horz.png" 
+         width="{!v.width}" 
+         height="{!v.height}">
+    </img>
+</aura:component>

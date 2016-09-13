@@ -1,0 +1,19 @@
+<aura:component controller="CurrentWeatherController">
+	<aura:attribute name="weatherList" type="Object[]" />
+
+	<!-- three day outlook -->
+    <span class="slds-p-horizontal--small">
+        <h3 class="slds-text-heading--small slds-p-top--medium">{!$Label.c.myWeather_ThreeDayButton}</h3>
+    </span>
+    <div aura:id="threeDayForecast" class="slds-grid">
+        <aura:iteration items="{!v.weatherList}" var="obj">
+            <div class="slds-col slds-has-flexi-truncate">
+                <p class="slds-text-body--medium"><a href="#">{!obj.title}</a></p>
+                <div>
+                    <p><img src="{!obj.imageURL}" width="30" height="30"></img></p>
+                    <p><div class="slds-text-body--small slds-truncate">{!obj.text}</div></p>
+                </div>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

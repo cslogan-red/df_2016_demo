@@ -1,0 +1,50 @@
+/* used to hide/show elements */
+.THIS.toggle {
+    
+    display: none;
+}
+
+.THIS .toggle {
+    
+    display: none;
+}
+
+/* default base theme */
+.THIS.mainBase__div--default {
+   
+    background-color: t(defaultBackgroundColor);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-width: t(defaultBaseMinWidth);
+    min-height: t(defaultBaseMinHeight);
+    top: t(defaultTop);
+    left: t(defaultLeft);
+}
+
+/* default body theme */
+.THIS .main__div--default {
+    
+    background-color: t(defaultBodyBackgroundColor);
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    min-width: t(defaultBodyMinWidth);
+    min-height: t(defaultBodyMinHeight);
+    top: t(defaultTop);
+    left: t(defaultLeft);
+    padding: t(defaultPadding);
+    margin: t(defaultBodyMargin);
+    box-shadow: t(defaultAtmosphere);
+    border-radius: t(defaultBodyBorderRadius);
+}
+
+.THIS .main__button--box-shadow {
+    
+    box-shadow: t(defaultButtonAtmosphere);
+}
+
+.THIS .main__input--box-shadow {
+    
+    box-shadow: t(defaultInputAtmosphere);
+}

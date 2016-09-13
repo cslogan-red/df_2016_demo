@@ -1,0 +1,58 @@
+<aura:component controller="CurrentWeatherController">
+    <aura:attribute name="weatherList" type="Object[]" />
+    <aura:attribute name="weatherListAll" type="Object[]" />
+    
+    <!-- ten day outlook -->
+    <span class="slds-p-horizontal--small">
+        
+        <h3 class="slds-text-heading--small slds-p-top--small">
+            {!$Label.c.myWeather_TenDayTitle}
+        </h3>
+    </span>
+    
+    <aura:iteration items="{!v.weatherList}" var="obj">
+        
+        <div class="slds-grid">
+            <div class="slds-col slds-p-around--small slds-has-divider--top-space">
+                <div class="slds-grid slds-grid--align-spread">
+                    <div class="slds-col">
+                        <p class="slds-text-body--medium">
+                            <a href="#">{!obj.title}</a>
+                        </p>
+                    </div>
+                    <div class="slds-col">
+                        <p><span class="slds-p-right--small">{!obj.imageText}</span>
+                            <img src="{!obj.imageURL}" width="30" height="30"></img>
+                        </p>
+                    </div>
+                </div>
+                <div class="slds-grid slds-grid--align-spread">
+                    <div class="slds-col">
+                        <p>
+                            <div class="slds-text-body--medium">{!obj.text}</div>
+                        </p>
+                    </div>
+                    <div class="slds-col">
+                        <p>
+                            <div class="slds-text-body--medium">{!obj.windText}</div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:iteration>
+    
+    <div class="slds-grid slds-grid--align-center slds-p-top--large">
+        <div class="slds-col">
+            <button aura:id="prevFiveButton" onclick="{!c.getPrevFiveDays}"
+                    class="slds-button slds-button--neutral main__button--box-shadow">
+                {!$Label.c.myWeather_Prev5Button}
+            </button>
+            <button aura:id="nextFiveButton" onclick="{!c.getNextFiveDays}"
+                    class="slds-button slds-button--neutral main__button--box-shadow">
+                {!$Label.c.myWeather_Next5Button}
+            </button>
+        </div>
+    </div>
+    
+</aura:component>
