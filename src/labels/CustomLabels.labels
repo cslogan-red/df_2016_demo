@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>myWeather_ExtendedForecast</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_ExtendedForecast</shortDescription>
+        <value>Extended Forecast</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_GoBackButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_GoBackButton</shortDescription>
+        <value>Return to Current Conditions</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_HomeButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_HomeButton</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Menu</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Menu</shortDescription>
+        <value>Menu</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_NewSearch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_NewSearch</shortDescription>
+        <value>Search by Location Zip Code</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Next5Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Next5Button</shortDescription>
+        <value>Next 5 Days</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Prev5Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Prev5Button</shortDescription>
+        <value>Prev 5 Days</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Radar_RecenterButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Radar_RecenterButton</shortDescription>
+        <value>Recenter</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Radar_ZoomInButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Radar_ZoomInButton</shortDescription>
+        <value>Zoom In</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Radar_ZoomOutButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Radar_ZoomOutButton</shortDescription>
+        <value>Zoom Out</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_Search</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_Search</shortDescription>
+        <value>Search for New Location</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_SearchButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_SearchButton</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_TenDayButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_TenDayButton</shortDescription>
+        <value>Ten Day Outlook</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_TenDayTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_TenDayTitle</shortDescription>
+        <value>10 Day Outlook</value>
+    </labels>
+    <labels>
+        <fullName>myWeather_ThreeDayButton</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>myWeather_ThreeDayButton</shortDescription>
+        <value>3 Day Outlook</value>
+    </labels>
+</CustomLabels>
