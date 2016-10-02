@@ -13,7 +13,7 @@ public class WeatherStatics {
 	public static final String SERVICE_UNAVAILABLE = 'SERVICE UNAVAILABLE';
 	
 	// endpoint related
-	public static final String API_KEY = '<insert your api key value here>';
+	public static final String API_KEY = '758e1f77b3939629';
 	public static final String BASE_WEATHER_URL = 'http://api.wunderground.com/api/';
 	public static final String CURRENT_COND_QUERY = '/conditions/q/';
 	public static final String FORECAST_QUERY = '/forecast/q/';
