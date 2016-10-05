@@ -123,7 +123,15 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="slds-grid slds-grid--align-spread slds-p-around--medium">
+                <div class="slds-col slds-align-bottom">
+                    <button id="refreshButton" label="Refresh" 
+                            class="slds-button slds-button--neutral main__button--box-shadow">
+                        Refresh
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
         
