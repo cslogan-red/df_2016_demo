@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CurrentWeatherController</members>
+        <members>HttpService</members>
+        <members>WeatherData</members>
+        <members>WeatherModel</members>
+        <members>WeatherService</members>
+        <members>WeatherStatics</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>Weather__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>SLDS104</members>
+        <name>StaticResource</name>
+    </types>
+    <version>34.0</version>
+</Package>
