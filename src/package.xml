@@ -18,6 +18,10 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>WUnderground_API</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
         <members>SLDS104</members>
         <name>StaticResource</name>
     </types>
